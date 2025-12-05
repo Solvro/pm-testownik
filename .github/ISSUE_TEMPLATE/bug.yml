@@ -1,0 +1,99 @@
+name: Bug
+description: Błąd znaleziony przez zespół podczas pracy/testów.
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Obszar
+      description: |
+        Gdzie to najprawdopodobniej siedzi?
+        Wypełnia: osoba zgłaszająca.
+      options:
+        - Frontend
+        - Backend
+        - Fullstack
+        - UI/UX
+        - Infra/DevOps
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Opis problemu
+      description: |
+        Jedno konkretne zdanie: co nie działa i gdzie.
+        Wypełnia: osoba zgłaszająca.
+      placeholder: |
+        Np. Po kliknięciu “Start” status nie aktualizuje się mimo poprawnej odpowiedzi z API.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Kroki odtworzenia
+      description: |
+        Najkrótsza ścieżka do błędu.
+        Wypełnia: osoba zgłaszająca; TL Front/Back dopisuje, jeśli trzeba.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Oczekiwane zachowanie
+      description: |
+        Jak powinno działać normalnie.
+        Wypełnia: osoba zgłaszająca lub PO.
+      placeholder: |
+        Np. Status powinien przejść na “Running” w <1 s po starcie.
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Kontekst techniczny (opcjonalnie)
+      description: |
+        Wersje, środowisko, branch/commit, logi/screeny.
+        Wypełnia: osoba zgłaszająca + właściwy TL.
+      placeholder: |
+        - OS/wersja:
+        - branch/commit:
+        - środowisko:
+        - logi/screeny:
+    validations:
+      required: false
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definicja done
+      description: |
+        Fix + test regresji + krótki opis w PR.
+        Wypełnia: TL Front (FE) / TL Back (BE) lub lider obszaru.
+      placeholder: |
+        - [ ] Fix
+        - [ ] Test regresji
+        - [ ] Podlinkowany PR
+    validations:
+      required: true
+
+  - type: input
+    id: owner_hint
+    attributes:
+      label: Sugerowany owner (opcjonalnie)
+      description: |
+        Jeśli od razu wiadomo, kto to przejmie.
+        Wypełnia: osoba zgłaszająca.
+      placeholder: "@nick"
+    validations:
+      required: false
