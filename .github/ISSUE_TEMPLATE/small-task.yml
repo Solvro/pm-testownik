@@ -1,0 +1,67 @@
+name: Small task
+description: Quick, low-risk task (doc, minor refactor, small fix)
+title: "[TASK] "
+labels: ["task", "small"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Cel
+      description: |
+        Po co to robimy? 1-2 zdania.
+        Kto wypełnia: PO (jeśli dotyczy wartości/demo) lub osoba zgłaszająca.
+        TL Front/Back może doprecyzować, jeśli cel jest techniczny.
+      placeholder: Np. Usprawnić czytelność README dla nowych członków.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Zakres
+      description: |
+        Co jest w tasku, a co nie? Krótko w punktach.
+        Kto wypełnia: osoba zgłaszająca + właściwy TL (Front lub Back).
+      placeholder: |
+        W:
+        - ...
+        Poza zakresem:
+        - ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definicja done
+      description: |
+        Jak poznamy, że skończone?
+        Kto wypełnia: właściwy TL (Front dla FE, Back dla BE).
+        PO może dodać 1-2 kryteria funkcjonalne, jeśli dotyczy.
+      placeholder: |
+        - PR z opisem zmian
+        - Zaktualizowana dokumentacja
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline (miękki)
+      description: |
+        Kto wypełnia: PM/lider projektu.
+        Jeśli nie ma PM-a, osoba zgłaszająca proponuje termin.
+      placeholder: Np. 2025-12-12 / przed demo
+    validations:
+      required: false
+
+  - type: input
+    id: support
+    attributes:
+      label: Kanał wsparcia
+      description: |
+        Gdzie pytania?
+        Kto wypełnia: TL Front/Back (technika) lub PM (organizacja).
+      placeholder: Np. #projekt / @TL-Front
+    validations:
+      required: false
