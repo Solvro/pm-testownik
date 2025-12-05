@@ -1,17 +1,35 @@
 name: Small task
-description: Quick, low-risk task (doc, minor refactor, small fix)
+description: Mały, szybki temat do ogarnięcia bez rozkminy na 3 spotkania.
 title: "[TASK] "
 labels: ["task", "small"]
 body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Obszar
+      description: |
+        Wybierz główny obszar zadania.
+        Wypełnia: osoba zgłaszająca.
+      options:
+        - Frontend
+        - Backend
+        - UI/UX
+        - Docs/Content
+        - Infra/DevOps
+        - Hardware/Embedded
+        - Other
+    validations:
+      required: true
+
   - type: textarea
     id: goal
     attributes:
       label: Cel
       description: |
-        Po co to robimy? 1-2 zdania.
-        Kto wypełnia: PO (jeśli dotyczy wartości/demo) lub osoba zgłaszająca.
-        TL Front/Back może doprecyzować, jeśli cel jest techniczny.
-      placeholder: Np. Usprawnić czytelność README dla nowych członków.
+        1–2 zdania o celu tego taska.
+        Wypełnia: PO, osoba zgłaszająca; TL Front/Back może doprecyzować technicznie.
+      placeholder: |
+        Np. Uporządkować onboarding w README, żeby nowa osoba odpaliła projekt w 10 minut.
     validations:
       required: true
 
@@ -20,10 +38,10 @@ body:
     attributes:
       label: Zakres
       description: |
-        Co jest w tasku, a co nie? Krótko w punktach.
-        Kto wypełnia: osoba zgłaszająca + właściwy TL (Front lub Back).
+        Co robimy i czego nie robimy. 2–6 punktów max.
+        Wypełnia: osoba zgłaszająca + właściwy TL (Front albo Back) lub lider obszaru UI/UX.
       placeholder: |
-        W:
+        W zakresie:
         - ...
         Poza zakresem:
         - ...
@@ -35,33 +53,34 @@ body:
     attributes:
       label: Definicja done
       description: |
-        Jak poznamy, że skończone?
-        Kto wypełnia: właściwy TL (Front dla FE, Back dla BE).
-        PO może dodać 1-2 kryteria funkcjonalne, jeśli dotyczy.
+        Krótka checklista tego, co musi być dowiezione.
+        Wypełnia: TL Front (FE) / TL Back (BE) / lider UI/UX.
+        PO może dorzucić 1 kryterium funkcjonalne.
       placeholder: |
-        - PR z opisem zmian
-        - Zaktualizowana dokumentacja
+        - [ ] Zrobione
+        - [ ] Podlinkowany PR / plik / Figma / materiał
+        - [ ] Krótki opis co zmieniliśmy
     validations:
       required: true
 
   - type: input
-    id: deadline
+    id: owner_hint
     attributes:
-      label: Deadline (miękki)
+      label: Sugerowany owner (opcjonalnie)
       description: |
-        Kto wypełnia: PM/lider projektu.
-        Jeśli nie ma PM-a, osoba zgłaszająca proponuje termin.
-      placeholder: Np. 2025-12-12 / przed demo
+        Jeśli masz dobrego kandydata od razu.
+        Wypełnia: osoba zgłaszająca.
+      placeholder: "@nick"
     validations:
       required: false
 
   - type: input
     id: support
     attributes:
-      label: Kanał wsparcia
+      label: Wsparcie / konsultacje (opcjonalnie)
       description: |
-        Gdzie pytania?
-        Kto wypełnia: TL Front/Back (technika) lub PM (organizacja).
-      placeholder: Np. #projekt / @TL-Front
+        Zwykle zostaw puste.
+        Uzupełnij tylko jeśli potrzebujemy konkretnej osoby spoza standardu TL/PO.
+      placeholder: "Np. @osoba-od-promocji"
     validations:
       required: false
