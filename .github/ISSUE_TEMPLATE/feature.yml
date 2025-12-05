@@ -1,0 +1,137 @@
+name: Feature
+description: Większa funkcja / większy temat do rozbicia na klocki.
+title: "[FEATURE] "
+labels: ["feature"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Obszar
+      description: |
+        Wybierz główny obszar.
+        Jeśli FE + BE → wybierz najbliższy i dopisz w Zakresie.
+        Wypełnia: osoba zgłaszająca.
+      options:
+        - Frontend
+        - Backend
+        - Fullstack (FE+BE)
+        - UI/UX
+        - Docs/Content
+        - Infra/DevOps
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Cel
+      description: |
+        2–3 zdania: jaki problem rozwiązujemy i jaka jest wartość dla projektu/demo.
+        Wypełnia: PO.
+      placeholder: |
+        Np. Dodajemy eksport CSV, żeby po testach dało się łatwo analizować wyniki bez ręcznego klepania.
+    validations:
+      required: true
+
+  - type: textarea
+    id: user_story
+    attributes:
+      label: User story (opcjonalnie)
+      description: |
+        Jedno zdanie “Jako…, chcę…, żeby…”, jeśli pomaga.
+        Wypełnia: PO.
+      placeholder: |
+        Jako członek zespołu chcę eksportu CSV, żeby szybko wrzucić dane do analizy.
+    validations:
+      required: false
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Zakres
+      description: |
+        W vs poza zakresem.
+        Wypełnia: PO + TL Front/Back lub lider UI/UX.
+        Jeśli FE+BE → oba TL-e dopisują swoje 2–4 punkty.
+      placeholder: |
+        W zakresie:
+        - FE: ...
+        - BE: ...
+        - UI/UX: ...
+        Poza zakresem:
+        - ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Wymagania / ograniczenia
+      description: |
+        Twarde ograniczenia techniczne lub funkcjonalne.
+        Wypełnia: TL Front/Back (techniczne) + PO (funkcjonalne) + lider UI/UX (jeśli dotyczy).
+      placeholder: |
+        - Platforma: ...
+        - Wydajność: ...
+        - Kompatybilność: ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Kryteria akceptacji
+      description: |
+        Checklista testowalnych warunków.
+        Wypełnia: PO (funkcjonalne) + TL Front/Back (techniczne/testowe) + lider UI/UX.
+      placeholder: |
+        FE:
+        - [ ] ...
+        BE:
+        - [ ] ...
+        UI/UX:
+        - [ ] ...
+        E2E:
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: tech_notes
+    attributes:
+      label: Notatki techniczne (opcjonalnie)
+      description: |
+        Proponowane podejście, moduły, ryzyka. Krótko i konkretnie.
+        Wypełnia: TL Front dla FE, TL Back dla BE.
+      placeholder: |
+        FE:
+        - ...
+        BE:
+        - ...
+        Ryzyka:
+        - ...
+    validations:
+      required: false
+
+  - type: input
+    id: owner_hint
+    attributes:
+      label: Sugerowany owner (opcjonalnie)
+      description: |
+        Jeśli widzisz naturalnego właściciela tematu.
+        Wypełnia: osoba zgłaszająca / PO / TL.
+      placeholder: "@nick"
+    validations:
+      required: false
+
+  - type: input
+    id: support
+    attributes:
+      label: Wsparcie / konsultacje (opcjonalnie)
+      description: |
+        Zwykle zostaw puste.
+        Uzupełnij tylko jeśli potrzebujemy kogoś spoza standardu TL/PO.
+      placeholder: "Np. @ux-mentor / @promo-copy"
+    validations:
+      required: false
