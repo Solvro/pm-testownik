@@ -16,7 +16,6 @@ body:
         - UI/UX
         - Docs/Content
         - Infra/DevOps
-        - Hardware/Embedded
         - Other
     validations:
       required: true
