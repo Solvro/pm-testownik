@@ -18,7 +18,7 @@ body:
         - Infra/DevOps
         - Other
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: problem
@@ -44,7 +44,7 @@ body:
         2. ...
         3. ...
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: expected
@@ -85,7 +85,7 @@ body:
         - [ ] Test regresji
         - [ ] Podlinkowany PR
     validations:
-      required: true
+      required: false
 
   - type: input
     id: owner_hint
