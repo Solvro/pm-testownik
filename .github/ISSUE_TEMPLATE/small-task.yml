@@ -18,7 +18,7 @@ body:
         - Infra/DevOps
         - Other
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: goal
@@ -60,7 +60,7 @@ body:
         - [ ] Podlinkowany PR / plik / Figma / materiał
         - [ ] Krótki opis co zmieniliśmy
     validations:
-      required: true
+      required: false
 
   - type: input
     id: owner_hint
