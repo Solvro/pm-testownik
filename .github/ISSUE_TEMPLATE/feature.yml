@@ -20,7 +20,7 @@ body:
         - Infra/DevOps
         - Other
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: goal
@@ -62,7 +62,7 @@ body:
         Poza zakresem:
         - ...
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: requirements
@@ -95,7 +95,7 @@ body:
         E2E:
         - [ ] ...
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: tech_notes
