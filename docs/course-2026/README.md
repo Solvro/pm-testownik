@@ -7,9 +7,9 @@ Project: **Testownik** | Author: Antoni Czaplicki | KN Solvro, Wrocław Universi
 
 | File | Description |
 |------|-------------|
-| [requirements.md](requirements.md) | Functional and non-functional requirements (course scope) |
+| [requirements.md](requirements.md) | Functional and non-functional requirements |
 | [architecture.md](architecture.md) | System architecture and data flow |
-| [adr.md](adr.md) | Architecture Decision Records |
+| [adr/](adr/README.md) | Architecture Decision Records (one file per decision) |
 
 ## Repositories
 
