@@ -15,6 +15,7 @@ Key constraints:
 - Costs must stay manageable (thousands of students, multiple requests per session)
 - The assistant must stay scoped to learning - not become a general-purpose chatbot
 - AI should never be forced or used without a clear purpose - it's only allowed if it provides a real value
+- Content made with AI should be clearly marked as such, for example AI created questions and honts get the ✨ emoji
 
 ## Considered Options
 
